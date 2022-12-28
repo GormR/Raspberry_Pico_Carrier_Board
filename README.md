@@ -2,8 +2,20 @@
 
 # Raspberry Pico RP2040 Carrier Board for AC and Measurment Applications
 
+# Safety Warning
+
+This project deals with mains voltage. Make sure you understand what you are doing. Please read the safety warning below carefully.
+
+![pic](warning.webp)
+
+![pic](3D.png?raw=true)
+
+[Link to EasyEDA project](https://oshwlab.com/goronb/imu-for-agopengps_copy_copy)
 
 # Raspberry Pico RP2040 Trägerplatine für Netz- und Messanwendungen
+
+Warnung! Dieses Projekt verwendet Netzspannung. Bei unsachgemäßem Umgang besteht Lebensgefahr! Ferner kann hoher Sachschaden entstehen!
+
 Die Raspberry-Pico-Plattform bietet ein zukunfsweisendes Programmierkonzept und ganz viel Funktionalität - neuerdings auch mit WiFi. Für Steuerungs- und Überwachungsaufgaben fehlt mir aber bisher ein geeignetes Trägerboard, mit dem man einige 230V-Leitungen überwachen und auch schalten kann. Außerdem fehlen Anschlüsse für eine größere Anzahl von Temperatursensoren. Das alles zusammen mit zeitgemäßen Push-In-Anschlüssen ist nun auf dem Board, das in ein Panasonic-Viko-Gehäuse passt.
 
 ![pic](3D.png?raw=true)
@@ -11,10 +23,15 @@ Die Raspberry-Pico-Plattform bietet ein zukunfsweisendes Programmierkonzept und 
 Um die gewünschte Anzahl von I/Os realisieren zu können, werden die digitalen (Temperatur-)Eingänge, sowie die Netzspannungseingänge und Relais über 8:1-Multiplexer, die gemeinsam über GP10(MSB)..GP12(LSB) gesteuert werden, geschaltet. 
 
 Pico     I/O
+
 ------+-------------------
+
 GP0      Temp1..8
+
 GP1      Temp9..16
+
 GP2      ACin0..7
+
 GP3      Rel0..7
 
 An den PushIn-Klemmen der Temperatureingänge liegt auch die 3.3V-Betriebsspannung an, so dass direkt ein digitaler Temperatursensor angeschlossen werden kann. Die Anschlüsse lassen sich natürlich auch als allgemeine Digitaleingänge nutzen.
@@ -24,14 +41,23 @@ Die Netzspannungseingänge "ACin7..0"" sind für 230V AC ausgelegt. Sie benötig
 Alle weiteren Pico-Signale sind direkt über eine Schutzbeschaltung an Klemmblöcke geführt, die einzeln über eine mit Jumpern zwischen 3.3V und 5V umschaltbaren Versorgungsspannung verfügen.
 
 Pico     I/O
+
 ------+-------------------
+
 GP26      I/O1 (auch analog)
+
 GP27      I/O2 (auch analog)
+
 GP28      I/O3 (auch analog)
+
 GP22      I/O4
+
 GP19      I/O5
+
 GP18      I/O6
+
 GP17      I/O7
+
 GP16      I/O8
 
 GP20 und GP21 sind als I²C-Schnittstelle auf einem QUIIC-Stecker geführt.
